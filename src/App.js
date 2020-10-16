@@ -1,11 +1,12 @@
-import React from 'react';
-import { Counter } from './features/Counter';
-import './App.css';
+import React from "react";
+import "./App.css";
+import IMessage from "./IMessage";
 
 function App() {
   return (
-    <div className="App">
-      <h1> Let's build the iMessage Clone !</h1>
+    <div className="app">
+      {/* iMessage Component */}
+      <IMessage />
     </div>
   );
 }
