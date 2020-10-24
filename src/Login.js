@@ -1,18 +1,26 @@
+import { Button } from "@material-ui/core";
 import React from "react";
 import "./Login.css";
+import { auth, provider } from "./firebase";
 
 function Login() {
+  const signIn = () => {
+    auth.signInWithPopup(provider).catch((error) => alert(error.message));
+  };
+
   return (
     <div className="login">
       <div className="login__logo">
         <img
-          src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macos/macos-sierra-messages-icon.png"
+          src="https://upload.wikimedia.org/wikipedia/commons/5/56/IMessage_logo_%28Apple_Inc.%29.png"
           alt="iMessage Logo"
         />
         <h1>iMessage</h1>
       </div>
 
-      <button className="login__submit">Sign In</button>
+      <Button className="login__submit" onClick={signIn}>
+        Sign In
+      </Button>
     </div>
   );
 }
